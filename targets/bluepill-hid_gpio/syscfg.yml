@@ -3,6 +3,19 @@ syscfg.vals:
 
     SHELL: 0
 
+    # hal_system_reset() executes bkpt when debugger is attached (C_DEBUGEN stays
+    # set until power cycle), that would halt DFU detach reboot with J-Link connected.
+    HAL_ENABLE_SOFTWARE_BREAKPOINTS: 0
+
+    # NVReg on F1 is 16 bits, write bootloader USBD_DFU_RESET_COUNT value.
+    # Must match USBD_DFU_RESET_COUNT in targets/bluepill-boot_dfu/syscfg.yml
+    USBD_DFU_RUNTIME: 1
+    USBD_DFU_MAGIC_NVREG: 2
+    USBD_DFU_MAGIC_VALUE: 4
+    USBD_WINDOWS_COMP_ID: 1
+    USBD_WINDOWS_COMP_INTERFACE: 1
+    USBD_DFU_SLOT_NAME: '"MYNEWT@08008000*92K"'
+
     # example GPIO for ease start
 #    HID_GPIO_PIN0: LED_BLINK_PIN
 

@@ -1,6 +1,8 @@
 pkg.name: "targets/bluepill-hid_gpio"
 pkg.type: target
-pkg.description: 
-pkg.author: 
-pkg.homepage: 
+pkg.description:
+pkg.author:
+pkg.homepage:
 
+pkg.deps.USBD_DFU_RUNTIME:
+    - "@apache-mynewt-core/hw/usb/tinyusb/dfu"
