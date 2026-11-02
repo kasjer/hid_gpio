@@ -30,6 +30,7 @@
 
 #include <tusb.h>
 #include <device/dcd.h>
+#include <class/hid/hid.h>
 
 /* For LED toggling */
 int g_led_pin = LED_BLINK_PIN;

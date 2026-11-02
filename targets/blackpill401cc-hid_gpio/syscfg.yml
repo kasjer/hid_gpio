@@ -9,3 +9,17 @@ syscfg.vals:
 
     # example GPIO for ease start
     HID_GPIO_PIN0: LED_BLINK_PIN
+
+    # hal_system_reset() executes bkpt when debugger is attached (C_DEBUGEN stays
+    # set until power cycle), that would halt DFU detach reboot with J-Link connected.
+    HAL_ENABLE_SOFTWARE_BREAKPOINTS: 0
+
+    USBD_DFU_RUNTIME: 1
+    USBD_DFU_MAGIC_NVREG: 2
+    USBD_DFU_MAGIC_VALUE: 4
+    USBD_WINDOWS_COMP_ID: 1
+    USBD_WINDOWS_COMP_INTERFACE: 1
+    USBD_DFU_SLOT_NAME: '"App @0x8000*192kB"'
+
+syscfg.vals.UART_0:
+    SHELL: 0
