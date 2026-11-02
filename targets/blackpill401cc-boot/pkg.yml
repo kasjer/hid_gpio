@@ -4,5 +4,11 @@ pkg.description:
 pkg.author: 
 pkg.homepage:
 
-pkg.deps:
+pkg.deps.MSC:
     - "@apache-mynewt-core/hw/usb/tinyusb/msc_fat_view"
+
+pkg.deps.DFU:
+    - "@apache-mynewt-core/hw/usb/tinyusb/dfu"
+
+app.cflags:
+    - -DHAL_PWR_MODULE_ENABLED=1
